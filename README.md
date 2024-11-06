@@ -1,8 +1,17 @@
-# React + Vite
+# GadgetHaven
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GadgetHaven is an e-commerce platform for buying the latest gadgets.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   Browse and search for gadgets
+-   View detailed gadget information
+-   User-friendly interface
+
+## Technologies Used
+
+-   React
+-   React Router
+-   Tailwind CSS
+-   Vite
+-   DaisyUI
