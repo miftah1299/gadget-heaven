@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <div className="navbar max-w-screen-xl mx-auto py-6">
+        <div className="navbar max-w-screen-xl mx-auto py-6 px-0">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div
@@ -67,9 +67,9 @@ const Navbar = () => {
                         </NavLink>
                     </ul>
                 </div>
-                <a className="btn btn-ghost hover:bg-transparent text-xl">
+                <NavLink className="btn btn-ghost hover:bg-transparent text-xl p-0">
                     Gadget Heaven
-                </a>
+                </NavLink>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 font-medium">
