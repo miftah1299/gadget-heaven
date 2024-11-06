@@ -3,6 +3,8 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import Statistics from "../pages/Statistics";
 import Dashboard from "../pages/Dashboard";
+import Wishlist from "../pages/Wishlist";
+import Carts from "../pages/Carts";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +24,16 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard",
                 element: <Dashboard />,
+                children: [],
+            },
+            {
+                path: "/carts",
+                element: <Carts />,
+                children: [],
+            },
+            {
+                path: "/wishlist",
+                element: <Wishlist />,
                 children: [],
             },
         ],

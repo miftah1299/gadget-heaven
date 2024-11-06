@@ -10,7 +10,7 @@ const MainLayout = () => {
         <div>
             <Toaster />
             {/* Navbar */}
-            <div>
+            <div className="">
                 <Navbar />
             </div>
 
