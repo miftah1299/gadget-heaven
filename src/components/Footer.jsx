@@ -2,10 +2,10 @@ import Heading from "./Heading";
 
 const Footer = () => {
     return (
-        <footer className="footer max-w-screen-xl mx-auto flex flex-col space-y-0 items-center py-24">
+        <footer className="footer max-w-screen-xl mx-auto flex flex-col items-center py-24">
             <div>
                 <Heading
-                    className="my-0"
+                    className="py-0"
                     titleClassName="text-black"
                     subtitleClassName="text-black/50"
                     title="Gadget Heaven"

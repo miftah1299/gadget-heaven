@@ -1,0 +1,150 @@
+[
+    {
+        "product_id": "p001",
+        "product_title": "MacBook Pro 16",
+        "product_image": "https://i.ibb.co.com/PFfTqLg/vpavic-191118-3800-0122.jpg",
+        "category": "Laptops",
+        "price": 2399,
+        "description": "Powerful laptop with M1 Pro chip and stunning display.",
+        "Specification": ["M1 Pro chip", "16-inch Retina display", "16GB RAM"],
+        "availability": true,
+        "rating": 4.9
+    },
+    {
+        "product_id": "p002",
+        "product_title": "Dell XPS 13",
+        "product_image": "https://i.ibb.co.com/cXD960h/XPS-13-2-in-1-on-desk-1280x800-1.jpg",
+        "category": "Laptops",
+        "price": 1299,
+        "description": "Compact and powerful laptop with InfinityEdge display.",
+        "Specification": ["Intel i7", "13.4-inch display", "16GB RAM"],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "product_id": "p003",
+        "product_title": "HP Spectre x360",
+        "product_image": "https://i.ibb.co.com/WvkQDMX/image-fit-1200-675-height-675-url-https-cdn0-tnwcdn-com-wp-content-blogs-dir-1-files-2021-08-HP-Spec.png",
+        "category": "Laptops",
+        "price": 1499,
+        "description": "Versatile 2-in-1 laptop with a stunning design.",
+        "Specification": ["Intel i7", "13.3-inch display", "16GB RAM"],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "product_id": "p004",
+        "product_title": "Lenovo ThinkPad X1 Carbon",
+        "product_image": "https://i.ibb.co.com/nDM35Vg/02px9ydzfu4pbdkkqbx9jdk-21-s8wb.jpg",
+        "category": "Laptops",
+        "price": 1799,
+        "description": "Durable and powerful business laptop.",
+        "Specification": ["Intel i7", "14-inch display", "16GB RAM"],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "product_id": "p005",
+        "product_title": "Asus ROG Zephyrus G14",
+        "product_image": "https://i.ibb.co.com/gtq5YwN/1578096205427.jpg",
+        "category": "Laptops",
+        "price": 1599,
+        "description": "High-performance gaming laptop with a compact design.",
+        "Specification": ["AMD Ryzen 9", "14-inch display", "16GB RAM"],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "product_id": "p006",
+        "product_title": "Microsoft Surface Laptop 4",
+        "product_image": "https://i.ibb.co.com/zPwYTq6/PDP-Highlight-Surface-Laptop-4-Sandstone-VP2-859x540.webp",
+        "category": "Laptops",
+        "price": 1299,
+        "description": "Sleek and powerful laptop with a great display.",
+        "Specification": ["Intel i5", "13.5-inch display", "8GB RAM"],
+        "availability": true,
+        "rating": 4.6
+    },
+    {
+        "product_id": "p007",
+        "product_title": "iPhone 13 Pro",
+        "product_image": "https://i.ibb.co.com/fYb15d4/3412-49256.jpg",
+        "category": "Phones",
+        "price": 999,
+        "description": "The latest iPhone with advanced features.",
+        "Specification": [
+            "A15 Bionic chip",
+            "6.1-inch display",
+            "Triple-camera system"
+        ],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "product_id": "p008",
+        "product_title": "Samsung Galaxy S21",
+        "product_image": "https://i.ibb.co.com/dWRn0np/Galaxy-S21-FE-5-G-Navy-Blue-6635.jpg",
+        "category": "Phones",
+        "price": 799,
+        "description": "High-end Android smartphone with powerful performance.",
+        "Specification": [
+            "Exynos 2100",
+            "6.2-inch display",
+            "Triple-camera system"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "product_id": "p009",
+        "product_title": "iPad Pro 12.9",
+        "product_image": "https://i.ibb.co.com/LS8NWw9/Apple-i-Pad-Pro-12-9-2020-Silver-128-GB.jpg",
+        "category": "Tablets",
+        "price": 1099,
+        "description": "High-performance tablet with M1 chip and Liquid Retina display.",
+        "Specification": ["M1 chip", "12.9-inch display", "128GB storage"],
+        "availability": true,
+        "rating": 4.9
+    },
+    {
+        "product_id": "p010",
+        "product_title": "Samsung Galaxy Tab S7",
+        "product_image": "https://i.ibb.co.com/D1bhVR9/Samsung-Galaxy-Tab-S7-FE-7.jpg",
+        "category": "Tablets",
+        "price": 649,
+        "description": "Versatile tablet with S Pen and DeX mode.",
+        "Specification": [
+            "Snapdragon 865+",
+            "11-inch display",
+            "128GB storage"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "product_id": "p011",
+        "product_title": "Anker PowerCore 10000",
+        "product_image": "https://i.ibb.co.com/rwx4MjP/Anker-Power-Core-10000-PD-Redux-Power-Bank.jpg",
+        "category": "Accessories",
+        "price": 50,
+        "description": "Compact and portable power bank with 10000mAh capacity.",
+        "Specification": ["10000mAh", "High-speed charging", "Compact design"],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "product_id": "p012",
+        "product_title": "Logitech MX Master 3",
+        "product_image": "https://i.ibb.co.com/NKScfkr/design-large.jpg",
+        "category": "Accessories",
+        "price": 99,
+        "description": "Advanced wireless mouse with ergonomic design and customizable buttons.",
+        "Specification": [
+            "Ergonomic design",
+            "4000 DPI sensor",
+            "Customizable buttons"
+        ],
+        "availability": true,
+        "rating": 4.8
+    }
+]
