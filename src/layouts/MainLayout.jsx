@@ -15,7 +15,7 @@ const MainLayout = () => {
             </div>
 
             {/* Main Section */}
-            <div className="max-w-screen-xl mx-auto">
+            <div className="">
                 {/* Dynamic content */}
                 <Outlet />
             </div>
