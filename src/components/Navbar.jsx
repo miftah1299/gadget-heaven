@@ -106,7 +106,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex gap-4">
-                <button className="btn btn-circle btn-ghost border-zinc-200">
+                <button className="btn btn-circle bg-white">
                     <NavLink
                         to="/carts"
                         className={({ isActive }) =>
@@ -131,7 +131,7 @@ const Navbar = () => {
                         </svg>
                     </NavLink>
                 </button>
-                <button className="btn btn-circle btn-ghost border-zinc-200">
+                <button className="btn btn-circle bg-white">
                     <NavLink
                         to="/wishlist"
                         className={({ isActive }) =>
