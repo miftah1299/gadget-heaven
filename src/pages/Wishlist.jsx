@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllFavorites, removeFavorite } from "../utilities";
+import { addCart, getAllFavorites, removeFavorite } from "../utilities";
 import { useLoaderData } from "react-router-dom";
 import Dashboard from "./Dashboard";
 
@@ -9,6 +9,13 @@ const Wishlist = () => {
         const favorites = getAllFavorites();
         setGadgets(favorites);
     }, []);
+
+    const [isCart, setIsCart] = useState(false);
+    // handleCart function
+    const handleCart = (gadget) => {
+        addCart(gadget);
+        setIsCart(true);
+    };
 
     return (
         <div className="">
@@ -39,13 +46,18 @@ const Wishlist = () => {
                                 <p className="text-lg font-semibold">
                                     Price: $ {gadget.price}
                                 </p>
+
+                                <button
+                                    onClick={() => handleCart(gadget)}
+                                    className="text-white bg-primary rounded-full px-6 py-3 text-lg font-semibold"
+                                >
+                                    Add to cart
+                                </button>
                             </div>
 
                             <div className="">
                                 <button
-                                    onClick={() =>
-                                        removeFavorite(gadget)
-                                    }
+                                    onClick={() => removeFavorite(gadget)}
                                     className="text-red-600"
                                 >
                                     <svg
