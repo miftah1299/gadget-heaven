@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { getAllCarts, removeCart } from "../utilities";
-import Card from "../components/Card";
 
 const Carts = () => {
+    const navigate = useNavigate();
     const data = useLoaderData(); // fetch data from the loader
     // const { gadget } = useParams();
 
@@ -19,6 +19,22 @@ const Carts = () => {
         setGadgets(sorted);
     };
 
+    let totalPrice = gadgets.reduce((total, item) => total + item.price, 0);
+
+    const [openModal, setOpenModal] = useState(false);
+    const handlePurchase = () => {
+        setOpenModal(true);
+    };
+
+    const handleCloseModal = () => {
+        localStorage.setItem("carts", JSON.stringify([]));
+        // totalprice will be 0
+        totalPrice = 0;
+        setGadgets([]);
+        setOpenModal(false);
+        navigate("/");
+    };
+
     return (
         <div className="max-w-screen-xl mx-auto">
             <div className="flex justify-between items-baseline my-12">
@@ -27,7 +43,7 @@ const Carts = () => {
                 </div>
                 <div className="flex gap-6 items-baseline">
                     <h2 className="text-2xl font-semibold mb-2">
-                        Total cost:{" "}
+                        Total cost: ${totalPrice.toFixed(2)}
                     </h2>
                     <button
                         onClick={() => handleSort()}
@@ -35,7 +51,10 @@ const Carts = () => {
                     >
                         Sort by Price
                     </button>
-                    <button className="text-white bg-primary rounded-full px-6 py-4 text-lg font-bold">
+                    <button
+                        onClick={handlePurchase}
+                        className="text-white bg-primary rounded-full px-6 py-4 text-lg font-bold"
+                    >
                         Purchase
                     </button>
                 </div>
@@ -91,6 +110,27 @@ const Carts = () => {
                 ))}
             </div>
 
+            {openModal && (
+                <div className="fixed inset-0 bg-black/30 flex justify-center items-center z-10">
+                    <div className="bg-white p-10 px-20 rounded-lg shadow-lg text-center space-y-3">
+                        <div className="flex justify-center">
+                            <img src="/src/assets/modal.png" alt="" />
+                        </div>
+                        <h2 className="text-2xl font-bold mb-4">
+                            Payment Successful
+                        </h2>
+                        <hr></hr>
+                        <p className="text-lg">Thanks for purchasing</p>
+                        <p className="text-lg mb-6">Total: {totalPrice}</p>
+                        <button
+                            onClick={handleCloseModal}
+                            className="bg-base-200 w-full py-2 px-6 rounded-3xl hover:text-white hover:bg-primary font-semibold"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
