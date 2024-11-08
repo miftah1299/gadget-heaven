@@ -7,6 +7,8 @@ GadgetHaven is an e-commerce platform for buying the latest gadgets.
 -   Browse and search for gadgets
 -   View detailed gadget information
 -   User-friendly interface
+-   Add gadgets to cart and wishlist
+-   Sort and filter gadgets by category
 
 ## Technologies Used
 

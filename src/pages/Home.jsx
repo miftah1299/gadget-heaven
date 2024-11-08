@@ -20,7 +20,7 @@ const Home = () => {
             ></Heading>
 
             {/* Categories tab section */}
-            <Categories categories={categories}></Categories>
+            {/* <Categories categories={categories}></Categories> */}
             <GadgetCards categories={categories}></GadgetCards>
 
             {/* Dynamic Nested Component */}

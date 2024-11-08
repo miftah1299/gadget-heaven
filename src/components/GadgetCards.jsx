@@ -1,55 +1,57 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { NavLink, useLoaderData, useParams } from "react-router-dom";
 import Card from "./Card";
 import PropTypes from "prop-types";
 
 
-const GadgetCards = () => {
+const GadgetCards = ({categories}) => {
 
     const data = useLoaderData();
     const { category } = useParams();
 
-    const [gadgets, setgadgets] = useState([]);
+    const [gadgets, setGadgets] = useState([]);
     // useEffect for filtering data based on category
     useEffect(() => {
         if (category) {
             const filteredByCategory = [...data].filter(
                 (gadget) => gadget.category === category
             );
-            setgadgets(filteredByCategory);
+            setGadgets(filteredByCategory);
         } else {
-            setgadgets(data);
+            setGadgets(data);
         }
     }, [category, data]);
 
     // console.log(category);
 
     return (
-        <div className="grid grid-cols-5">
+        <div className="grid grid-cols-5 gap-6 max-w-screen-xl mx-auto">
             <div
                 role="tablist"
-                className="tabs tabs-bordered max-w-screen-xl mx-auto col-span-1 flex flex-col gap-4 items-start bg-white rounded-md"
+                className="tabs tabs-bordered flex flex-col gap-6 items-start bg-white rounded-xl p-6"
             >
-                {/* {categories.map((category) => (
+                {categories && categories.map((category) => (
                     <NavLink
                         key={category.id}
                         to={`/category/${category.category}`}
                         role="tab"
                         className={({ isActive }) =>
-                            `tab rounded-full bg-zinc-100 border-none shadow-none ${
-                                isActive ? "tab-active" : ""
+                            `rounded-full px-8 py-4 font-medium ${
+                                isActive ? "tab-active bg-primary text-white" : "bg-zinc-100 "
                             }`
                         }
                     >
                         {category.category}
                     </NavLink>
-                ))} */}
+                ))}
             </div>
 
             <div className="col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {gadgets.map((gadget) => (
-                    <Card key={gadget.id} gadget={gadget}></Card>
-                ))}
+                {
+                    gadgets.map((gadget)=>(
+                        <Card key={gadget.id} gadget={gadget}></Card>
+                    ))
+                }
             </div>
         </div>
     );
