@@ -1,16 +1,8 @@
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Card = ({ gadget }) => {
-    const {
-        id,
-        product_image,
-        product_title,
-        price,
-        description,
-        Specification,
-        rating,
-    } = gadget || {};
+    const { id, product_image, product_title, price } = gadget || {};
 
     console.log(gadget);
 

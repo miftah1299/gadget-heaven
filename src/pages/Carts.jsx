@@ -1,17 +1,22 @@
-import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
+import { getAllCarts, removeCart } from "../utilities";
+import Card from "../components/Card";
 
 const Carts = () => {
-    const data = useLoaderData();
+    const data = useLoaderData(); // fetch data from the loader
+    // const { gadget } = useParams();
 
-    const [gadgets, setGadgets] = useState(data);
+    const [gadgets, setGadgets] = useState([]);
+    useEffect(() => {
+        const carts = getAllCarts();
+        setGadgets(carts);
+    }, []);
 
-    const handleSort = (sortBy) => {
+    const handleSort = () => {
         // sort by price
-        if (sortBy === "price") {
-            const sorted = [...data].sort((a, b) => b.price - a.price);
-            setGadgets(sorted);
-        }
+        const sorted = [...gadgets].sort((a, b) => b.price - a.price);
+        setGadgets(sorted);
     };
 
     return (
@@ -25,7 +30,7 @@ const Carts = () => {
                         Total cost:{" "}
                     </h2>
                     <button
-                        onClick={() => handleSort("price")}
+                        onClick={() => handleSort()}
                         className="border border-primary text-primary rounded-full px-6 py-4 text-lg font-bold"
                     >
                         Sort by Price
@@ -61,7 +66,10 @@ const Carts = () => {
                             </div>
 
                             <div className="">
-                                <button className="text-red-600">
+                                <button
+                                    onClick={() => removeCart(gadget)}
+                                    className="text-red-600"
+                                >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -82,6 +90,7 @@ const Carts = () => {
                     </div>
                 ))}
             </div>
+
         </div>
     );
 };

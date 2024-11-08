@@ -1,18 +1,7 @@
 import { NavLink } from "react-router-dom";
 import Heading from "../components/Heading";
-import { useState } from "react";
-import Carts from "./Carts";
-import Wishlist from "./Wishlist";
 
 const Dashboard = () => {
-    const [toggle, setToggle] = useState(true);
-    const handleToggle = () => {
-        setToggle(true);
-    };
-    const handleToggleWishlist = () => {
-        setToggle(false);
-    };
-
     return (
         <div>
             <div className="bg-primary pb-12">
@@ -22,10 +11,12 @@ const Dashboard = () => {
                     subtitle="Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
                 ></Heading>
 
-                <div className="flex gap-4 justify-center">
+                <div
+                    role="tablist"
+                    className="tabs tabs-bordered flex gap-4 justify-center"
+                >
                     <NavLink
-                        onClick={handleToggle}
-                        // to={`/carts`}
+                        to={`/dashboard/carts`}
                         role="tab"
                         className={({ isActive }) =>
                             `rounded-full  px-16 py-4 text-lg font-bold ${
@@ -39,8 +30,7 @@ const Dashboard = () => {
                     </NavLink>
 
                     <NavLink
-                        onClick={handleToggleWishlist}
-                        // to={`/wishlist`}
+                        to={`/dashboard/wishlist`}
                         role="tab"
                         className={({ isActive }) =>
                             `rounded-full  px-16 py-4 text-lg font-bold ${
@@ -54,11 +44,6 @@ const Dashboard = () => {
                     </NavLink>
                 </div>
             </div>
-            {toggle ? (
-                <Carts></Carts>
-            ) : (
-                <Wishlist></Wishlist>
-            )}
         </div>
     );
 };
