@@ -40,14 +40,14 @@ const addFavorite = (gadget) => {
     const favorites = getAllFavorites();
     const isExist = favorites.find((item) => item.id === gadget.id);
     if (isExist) {
-        return toast.error("Already Added to Favorites");
+        return toast.error("Already Added to Wishlist");
     }
 
     // add the new gadget to the array
     favorites.push(gadget);
     // stringify the array and store it in local storage
     localStorage.setItem("favorites", JSON.stringify(favorites));
-    toast.success("Added to Favorites");
+    toast.success("Added to Wishlist");
 };
 
 /*
@@ -59,7 +59,7 @@ const removeFavorite = (gadget) => {
     const favorites = getAllFavorites();
     const filteredFavorites = favorites.filter((item) => item.id !== gadget.id);
     localStorage.setItem("favorites", JSON.stringify(filteredFavorites));
-    toast.success("Removed from Favorites");
+    toast.success("Removed from Wishlist");
 };
 
 // remove a gadget from local storage
