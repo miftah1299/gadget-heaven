@@ -54,7 +54,7 @@ const Navbar = () => {
                             Statistics
                         </NavLink>
                         <NavLink
-                            to="/dashboard"
+                            to="/carts"
                             className={({ isActive }) =>
                                 `tab ${
                                     isActive
@@ -94,7 +94,7 @@ const Navbar = () => {
                         Statistics
                     </NavLink>
                     <NavLink
-                        to="/dashboard"
+                        to="/carts"
                         className={({ isActive }) =>
                             `tab ${
                                 isActive ? "text-primary" : "hover:text-primary"

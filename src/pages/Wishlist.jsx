@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllFavorites, removeFavorite } from "../utilities";
 import { useLoaderData } from "react-router-dom";
+import Dashboard from "./Dashboard";
 
 const Wishlist = () => {
     const [gadgets, setGadgets] = useState([]);
@@ -10,8 +11,9 @@ const Wishlist = () => {
     }, []);
 
     return (
-        <div className="max-w-screen-xl mx-auto">
-            <div className="flex justify-between items-baseline my-12">
+        <div className="">
+            <Dashboard />
+            <div className="max-w-screen-xl mx-auto flex justify-between items-baseline my-12">
                 <h1 className="text-3xl font-bold">WishList</h1>
             </div>
 

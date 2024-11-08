@@ -14,7 +14,7 @@ const Banner = () => {
                     subtitle="Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
                 />
                 <button
-                    onClick={() => navigate("/dashboard")}
+                    onClick={() => navigate("/carts")}
                     className="rounded-full bg-white text-primary px-7 py-4 text-xl font-bold"
                 >
                     Shop Now
