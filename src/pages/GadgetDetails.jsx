@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
+import { render } from "react-dom";
 import {
     addCart,
     addFavorite,
@@ -53,6 +55,10 @@ const GadgetDetails = () => {
         setIsFavorite(true);
     };
 
+    const ratingChanged = (newRating) => {
+        console.log(newRating);
+    };
+
     return (
         <div>
             <div className="bg-primary pb-56">
@@ -93,11 +99,18 @@ const GadgetDetails = () => {
                                 ))}
                         </ul>
                         <p className="text-xl text-gray-700 mb-4">
-                            Rating: {rating} / 5
+                            Rating:
+                            <ReactStars
+                                count={5}
+                                onChange={ratingChanged}
+                                size={24}
+                                activeColor="#ffd700"
+                            />
+                            {rating} / 5
                         </p>
                         <div className="flex gap-4">
                             <button
-                            disabled={isCart}
+                                disabled={isCart}
                                 onClick={() => handleCart(gadget)}
                                 className="btn bg-primary text-white px-4 py-2 rounded-full"
                             >
