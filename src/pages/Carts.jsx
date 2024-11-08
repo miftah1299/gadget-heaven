@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { getAllCarts, removeCart } from "../utilities";
+import Dashboard from "./Dashboard";
 
 const Carts = () => {
     const navigate = useNavigate();
@@ -36,8 +37,10 @@ const Carts = () => {
     };
 
     return (
-        <div className="max-w-screen-xl mx-auto">
-            <div className="flex justify-between items-baseline my-12">
+
+        <div className="">
+            <Dashboard />
+            <div className="max-w-screen-xl mx-auto flex justify-between items-baseline my-12">
                 <div>
                     <h1 className="text-3xl font-bold">Carts</h1>
                 </div>

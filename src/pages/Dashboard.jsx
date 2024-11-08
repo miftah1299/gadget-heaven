@@ -16,7 +16,7 @@ const Dashboard = () => {
                     className="tabs tabs-bordered flex gap-4 justify-center"
                 >
                     <NavLink
-                        to={`/dashboard/carts`}
+                        to={`/carts`}
                         role="tab"
                         className={({ isActive }) =>
                             `rounded-full  px-16 py-4 text-lg font-bold ${
@@ -30,7 +30,7 @@ const Dashboard = () => {
                     </NavLink>
 
                     <NavLink
-                        to={`/dashboard/wishlist`}
+                        to={`/wishlist`}
                         role="tab"
                         className={({ isActive }) =>
                             `rounded-full  px-16 py-4 text-lg font-bold ${
