@@ -31,7 +31,7 @@ You can find the requirement document here: [Requirement Document](https://githu
 -   Components
 -   Props
 -   State
--   Hooks (useState, useEffect, useContext)
+-   Hooks (useState, useEffect)
 -   React Router for navigation
 
 ## Data Handling and Management

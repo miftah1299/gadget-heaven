@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { getAllCarts, removeCart } from "../utilities";
+import modalImage from "../assets/modal.png"
 import Dashboard from "./Dashboard";
 
 const Carts = () => {
@@ -117,7 +118,7 @@ const Carts = () => {
                 <div className="fixed inset-0 bg-black/30 flex justify-center items-center z-10">
                     <div className="bg-white p-10 px-20 rounded-lg shadow-lg text-center space-y-3">
                         <div className="flex justify-center">
-                            <img src="/src/assets/modal.png" alt="" />
+                            <img src={modalImage} alt="" />
                         </div>
                         <h2 className="text-2xl font-bold mb-4">
                             Payment Successful
