@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLoaderData, useParams } from "react-router-dom";
 import Card from "./Card";
-import PropTypes from "prop-types";
 
-
-const GadgetCards = ({categories}) => {
-
+const GadgetCards = ({ categories }) => {
     const data = useLoaderData();
     const { category } = useParams();
 
@@ -28,36 +25,34 @@ const GadgetCards = ({categories}) => {
         <div className="grid grid-cols-5 gap-6 max-w-screen-xl mx-auto">
             <div
                 role="tablist"
-                className="tabs tabs-bordered flex flex-col gap-6 items-start bg-white rounded-xl p-6"
+                className="tabs tabs-bordered flex flex-col gap-6 items-start bg-white rounded-xl p-6 h-96"
             >
-                {categories && categories.map((category) => (
-                    <NavLink
-                        key={category.id}
-                        to={`/category/${category.category}`}
-                        role="tab"
-                        className={({ isActive }) =>
-                            `rounded-full px-8 py-4 font-medium ${
-                                isActive ? "tab-active bg-primary text-white" : "bg-zinc-100 "
-                            }`
-                        }
-                    >
-                        {category.category}
-                    </NavLink>
-                ))}
+                {categories &&
+                    categories.map((category) => (
+                        <NavLink
+                            key={category.id}
+                            to={`/category/${category.category}`}
+                            role="tab"
+                            className={({ isActive }) =>
+                                `rounded-full px-8 py-4 font-medium ${
+                                    isActive
+                                        ? "tab-active bg-primary text-white"
+                                        : "bg-zinc-100 "
+                                }`
+                            }
+                        >
+                            {category.category}
+                        </NavLink>
+                    ))}
             </div>
 
             <div className="col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {
-                    gadgets.map((gadget)=>(
-                        <Card key={gadget.id} gadget={gadget}></Card>
-                    ))
-                }
+                {gadgets.map((gadget) => (
+                    <Card key={gadget.id} gadget={gadget}></Card>
+                ))}
             </div>
         </div>
     );
 };
-// GadgetCards.propTypes = {
-//     categories: PropTypes.array.isRequired,
-// };
 
 export default GadgetCards;
