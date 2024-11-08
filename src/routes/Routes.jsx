@@ -5,6 +5,8 @@ import Statistics from "../pages/Statistics";
 import Dashboard from "../pages/Dashboard";
 import Wishlist from "../pages/Wishlist";
 import Carts from "../pages/Carts";
+import GadgetCards from "../components/GadgetCards";
+import GadgetDetails from "../pages/GadgetDetails";
 
 const router = createBrowserRouter([
     {
@@ -14,7 +16,19 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                children: [],
+                loader: () => fetch("../categories.json"),
+                children: [
+                    {
+                        path: "/",
+                        element: <GadgetCards />,
+                        loader: () => fetch("../gadgets.json"),
+                    },
+                    {
+                        path: "/category/:category",
+                        element: <GadgetCards />,
+                        loader: () => fetch("../gadgets.json"),
+                    },
+                ],
             },
             {
                 path: "/statistics",
@@ -35,6 +49,11 @@ const router = createBrowserRouter([
                 path: "/wishlist",
                 element: <Wishlist />,
                 children: [],
+            },
+            {
+                path: "/gadgets/:id",
+                element: <GadgetDetails />,
+                loader: () => fetch("../gadgets.json"),
             },
         ],
     },

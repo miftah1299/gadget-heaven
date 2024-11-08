@@ -1,7 +1,9 @@
 import Heading from "./Heading";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
+    const navigate = useNavigate();
+
     return (
         <div>
             <div className="bg-primary text-center px-2 md:px-56 pb-60">
@@ -11,8 +13,11 @@ const Banner = () => {
                     title="Upgrade Your Tech Accessorize with Gadget Heaven Accessories"
                     subtitle="Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
                 />
-                <button className="rounded-full bg-white text-primary px-7 py-4 text-xl font-bold">
-                    <NavLink to="/dashboard">Shop Now</NavLink>
+                <button
+                    onClick={() => navigate("/dashboard")}
+                    className="rounded-full bg-white text-primary px-7 py-4 text-xl font-bold"
+                >
+                    Shop Now
                 </button>
             </div>
 
