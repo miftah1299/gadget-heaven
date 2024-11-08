@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-import { addFavorite, getAllFavorites } from "../utilities";
+import {
+    addCart,
+    addFavorite,
+    getAllCarts,
+    getAllFavorites,
+} from "../utilities";
 import Heading from "../components/Heading";
 
 const GadgetDetails = () => {
@@ -9,15 +14,22 @@ const GadgetDetails = () => {
 
     const [gadget, setgadget] = useState({});
 
+    const [isCart, setIsCart] = useState(false);
     const [isFavorite, setIsFavorite] = useState(false);
 
     useEffect(() => {
         const singleData = data.find((gadget) => gadget.id == id);
         setgadget(singleData);
 
+        const carts = getAllCarts();
+        const isExistCart = carts.find((item) => item.id == singleData.id);
+        if (isExistCart) {
+            setIsCart(true);
+        }
+
         const favorites = getAllFavorites();
-        const isExist = favorites.find((item) => item.id == singleData.id);
-        if (isExist) {
+        const isExistFav = favorites.find((item) => item.id == singleData.id);
+        if (isExistFav) {
             setIsFavorite(true);
         }
     }, [data, id]);
@@ -31,7 +43,11 @@ const GadgetDetails = () => {
         rating,
     } = gadget || {};
 
-    // handleFavorite function
+    // handleCart function
+    const handleCart = (gadget) => {
+        addCart(gadget);
+        setIsCart(true);
+    };
     const handleFavorite = (gadget) => {
         addFavorite(gadget);
         setIsFavorite(true);
@@ -81,7 +97,8 @@ const GadgetDetails = () => {
                         </p>
                         <div className="flex gap-4">
                             <button
-                                
+                            disabled={isCart}
+                                onClick={() => handleCart(gadget)}
                                 className="btn bg-primary text-white px-4 py-2 rounded-full"
                             >
                                 Add to Cart
@@ -100,8 +117,11 @@ const GadgetDetails = () => {
                                     />
                                 </svg>
                             </button>
-                            <button disabled={isFavorite}
-                                onClick={() => handleFavorite(gadget)} className="btn btn-circle bg-white hover:text-primary">
+                            <button
+                                disabled={isFavorite}
+                                onClick={() => handleFavorite(gadget)}
+                                className="btn btn-circle bg-white hover:text-primary"
+                            >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
