@@ -1,6 +1,6 @@
-# GadgetHaven
+# Gadget Heaven
 
-GadgetHaven is an e-commerce platform for buying the latest gadgets.
+Gadget Heaven is an e-commerce platform for buying the latest gadgets.
 
 ## Features
 
@@ -17,3 +17,7 @@ GadgetHaven is an e-commerce platform for buying the latest gadgets.
 -   Tailwind CSS
 -   Vite
 -   DaisyUI
+
+## Live Link
+
+Check out the live website: [GadgetHaven](https://gadget-heaven-website-a8.surge.sh)
