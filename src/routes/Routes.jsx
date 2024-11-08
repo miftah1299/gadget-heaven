@@ -7,11 +7,13 @@ import Wishlist from "../pages/Wishlist";
 import Carts from "../pages/Carts";
 import GadgetCards from "../components/GadgetCards";
 import GadgetDetails from "../pages/GadgetDetails";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "/",

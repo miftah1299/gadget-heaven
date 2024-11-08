@@ -8,7 +8,7 @@ const Card = ({ gadget }) => {
 
     return (
         <div className="mt-4">
-            <Link to={`gadgets/${id}`}>
+            <Link to={`/gadgets/${id}`}>
                 <div className="max-w-sm rounded-md overflow-hidden shadow-lg bg-white p-4 transition duration-500 transform hover:scale-105">
                     <img
                         className="w-full h-48 object-cover rounded-md"
