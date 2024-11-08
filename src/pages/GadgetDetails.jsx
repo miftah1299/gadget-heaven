@@ -80,7 +80,10 @@ const GadgetDetails = () => {
                             Rating: {rating} / 5
                         </p>
                         <div className="flex gap-4">
-                            <button className="btn bg-primary text-white px-4 py-2 rounded-full">
+                            <button
+                                
+                                className="btn bg-primary text-white px-4 py-2 rounded-full"
+                            >
                                 Add to Cart
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +100,8 @@ const GadgetDetails = () => {
                                     />
                                 </svg>
                             </button>
-                            <button className="btn btn-circle bg-white hover:text-primary">
+                            <button disabled={isFavorite}
+                                onClick={() => handleFavorite(gadget)} className="btn btn-circle bg-white hover:text-primary">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"

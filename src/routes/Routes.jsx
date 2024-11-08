@@ -33,22 +33,21 @@ const router = createBrowserRouter([
             {
                 path: "/statistics",
                 element: <Statistics />,
-                children: [],
             },
             {
                 path: "/dashboard",
                 element: <Dashboard />,
-                children: [],
-            },
-            {
-                path: "/carts",
-                element: <Carts />,
-                children: [],
-            },
-            {
-                path: "/wishlist",
-                element: <Wishlist />,
-                children: [],
+                loader: () => fetch("../gadgets.json"),
+                children: [
+                    // {
+                    //     path: "/",
+                    //     element: <Carts />,
+                    // },
+                    // {
+                    //     path: "/wishlist",
+                    //     element: <Wishlist />,
+                    // },
+                ],
             },
             {
                 path: "/gadgets/:id",
