@@ -5,7 +5,7 @@ import GadgetCards from "../components/GadgetCards";
 
 const Home = () => {
     const categories = useLoaderData();
-    console.log(categories);
+    // console.log(categories);
 
     return (
         <div className="">

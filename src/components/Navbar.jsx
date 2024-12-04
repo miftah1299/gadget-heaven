@@ -68,10 +68,12 @@ const Navbar = () => {
                             </NavLink>
                         </ul>
                     </div>
+
                     <NavLink className="btn btn-ghost hover:bg-transparent text-xl p-0">
                         Gadget Heaven
                     </NavLink>
                 </div>
+
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 font-medium">
                         <NavLink
@@ -112,6 +114,7 @@ const Navbar = () => {
                         </NavLink>
                     </ul>
                 </div>
+
                 <div className="navbar-end flex gap-4">
                     <button className="btn btn-circle bg-white">
                         <NavLink

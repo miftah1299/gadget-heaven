@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { NavLink, useLoaderData, useParams } from "react-router-dom";
 import Card from "./Card";
 
 const GadgetCards = ({ categories }) => {
     const data = useLoaderData();
     const { category } = useParams();
-
     const [gadgets, setGadgets] = useState([]);
     // useEffect for filtering data based on category
     useEffect(() => {
@@ -53,6 +53,14 @@ const GadgetCards = ({ categories }) => {
             </div>
         </div>
     );
+};
+GadgetCards.propTypes = {
+    categories: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            category: PropTypes.string.isRequired,
+        })
+    ).isRequired,
 };
 
 export default GadgetCards;

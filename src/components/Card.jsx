@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Card = ({ gadget }) => {
     const { id, product_image, product_title, price } = gadget || {};
 
-    console.log(gadget);
+    // console.log(gadget);
 
     return (
         <div className="mt-4">
