@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-import { render } from "react-dom";
 import {
     addCart,
     addFavorite,
@@ -56,7 +55,7 @@ const GadgetDetails = () => {
     };
 
     const ratingChanged = (newRating) => {
-        console.log(newRating);
+        // console.log(newRating);
     };
 
     return (
